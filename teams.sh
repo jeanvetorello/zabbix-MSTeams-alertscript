@@ -3,7 +3,7 @@
 # Teams incoming web-hook URL and user name
 url='https://outlook.office.com/webhook/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'                # https://dev.outlook.com/Connectors/GetStarted#posting-more-complex-cards
 curlheader='-H "Content-Type: application/json"'
-agent='-A "zabbix-teams-alertscript / https://github.com/ericoc/zabbix-slack-alertscript"'
+#agent='-A "zabbix-teams-alertscript / https://github.com/ericoc/zabbix-slack-alertscript"'
 curlmaxtime='-m 60'
 # username='Zabbix' # dont need this anymore
 
@@ -36,4 +36,5 @@ payload=\""{\\\"title\\\": \\\"${subject} \\\", \\\"text\\\": \\\"${message} \\\
 
 curldata=$(echo -d "$payload")
 
-eval curl $curlmaxtime $curlheader $curldata $url $agent
+eval curl $curlmaxtime $curlheader $curldata $url 
+#$agent
